@@ -1,11 +1,11 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
-Bank_credit = pd.read_csv(r'C:\Users\DINESH\Downloads\bankadditionalfull1603957400921\bank-additional-full.csv')
-X = Bank_credit.columns.drop("y")
-y = Bank_credit['y']
+Bank_credit_Assumption = pd.read_csv(r'C:\Users\DINESH\Downloads\bankadditionalfull1603957400921\bank-additional-full.csv')
+X = Bank_credit_Assumption.columns.drop("y")
+y = Bank_credit_Assumption['y']
 model = LogisticRegression()
-credit_data_encoded = pd.get_dummies(Bank_credit[X])
+credit_data_encoded = pd.get_dummies(Bank_credit_Assumption[X])
 # Checking the shape of the input data
 
 X_train,X_test,y_train,y_test = train_test_split(credit_data_encoded, y,test_size=0.3,random_state=100)
